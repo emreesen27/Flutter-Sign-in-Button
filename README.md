@@ -7,7 +7,7 @@ A Flutter plugin for generating sign in buttons for different social media accou
 You must add the library as a dependency to your project.
 ```yaml
 dependencies:
- sign_button: ^0.0.1
+ sign_button: ^0.0.3
 ```
 
 You should then run `flutter packages get`
@@ -33,7 +33,7 @@ ButtonSize
 ```dart
 SignButton(
   buttonType: ButtonType.google,
-  buttonSize: ButtonSize.large, // small, medium(default), large
+  buttonSize: ButtonSize.large, // small(default), medium, large
   onPressed: () {
   print('click');
   }).show()

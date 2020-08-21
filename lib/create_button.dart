@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class SignButton {
-	//values ​​of the variables are assigned later. You don't need to value it.
+  //values ​​of the variables are assigned later. You don't need to value it.
   ButtonType buttonType;
   ImagePosition imagePosition;
   ButtonSize buttonSize;
   Function onPressed;
   Color btnColor, btnTextColor;
   String btnText;
-  double elevation;
+  double elevation, width;
 
   Widget _image;
-  double _fontSize, _imageSize;
+  double _fontSize, _imageSize, _buttonWidth;
   Color _btnColor, _btnTextColor;
   String _btnText;
 
@@ -25,13 +25,13 @@ class SignButton {
     this.btnText,
     this.btnColor,
     this.btnTextColor,
-    this.buttonSize = ButtonSize.medium,
-    this.imagePosition = ImagePosition.right,
+    this.width, /// You can change the value of width when the text size becomes too small.
+    this.buttonSize = ButtonSize.small,
+    this.imagePosition = ImagePosition.left,
     this.elevation = 8.0,
     @required this.buttonType,
     @required this.onPressed,
   });
-
 
   ///You must call the "show()" method to view the SignButton class you have defined.
   Widget show() {
@@ -47,31 +47,37 @@ class SignButton {
       onPressed: onPressed,
       elevation: elevation,
       child: Container(
+        width: width ?? _buttonWidth,
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: imagePosition == ImagePosition.left
+              ? MainAxisAlignment.start
+              : MainAxisAlignment.spaceBetween,
           children: [
-            imagePosition == ImagePosition.left
-                ? Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: _image,
-                  )
-                : Container(),
-            Text(
-              btnText ?? _btnText,
-              style: TextStyle(
-                fontSize: _fontSize,
-                color: btnTextColor ?? _btnTextColor,
-              ),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: imagePosition == ImagePosition.left
+                  ? _image
+                  : Text(
+                      btnText ?? _btnText,
+                      style: TextStyle(
+                        fontSize: _fontSize,
+                        color: btnTextColor ?? _btnTextColor,
+                      ),
+                    ),
             ),
-            SizedBox(
-              width: 5.0,
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: imagePosition == ImagePosition.left
+                  ? Text(
+                      btnText ?? _btnText,
+                      style: TextStyle(
+                        fontSize: _fontSize,
+                        color: btnTextColor ?? _btnTextColor,
+                      ),
+                    )
+                  : _image,
             ),
-            imagePosition == ImagePosition.right
-                ? Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: _image,
-                  )
-                : Container(),
           ],
         ),
       ),
@@ -80,14 +86,17 @@ class SignButton {
 
   void _setButtonSize() {
     if (buttonSize == ButtonSize.small) {
-      _fontSize = 16.0;
+      _fontSize = 15.0;
       _imageSize = 24.0;
+      _buttonWidth = 200;
     } else if (buttonSize == ButtonSize.medium) {
-      _fontSize = 18.0;
-      _imageSize = 32.0;
+      _fontSize = 17.0;
+      _imageSize = 28.0;
+      _buttonWidth = 220;
     } else {
-      _fontSize = 20.0;
-      _imageSize = 40.0;
+      _fontSize = 19.0;
+      _imageSize = 32.0;
+      _buttonWidth = 250;
     }
   }
 
