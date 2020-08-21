@@ -38,6 +38,8 @@ SignButton(
   print('click');
   }).show()
 ```
+<img src = "outputs/size.png">
+
 ImagePosition
 ```dart
 SignButton(
@@ -47,6 +49,8 @@ SignButton(
   print('click');
   }).show()
 ```
+<img src = "outputs/ImagePosition.png">
+
 
 ## Other properties
 - btnText 
