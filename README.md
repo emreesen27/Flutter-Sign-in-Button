@@ -29,6 +29,9 @@ SignButton(
   print('click');
   }).show()
 ```
+
+<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/buttons.png?raw=true">
+
 ButtonSize
 ```dart
 SignButton(
@@ -38,7 +41,7 @@ SignButton(
   print('click');
   }).show()
 ```
-<img src = "outputs/size.png">
+<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/size.png?raw=true">
 
 ImagePosition
 ```dart
@@ -49,7 +52,7 @@ SignButton(
   print('click');
   }).show()
 ```
-<img src = "outputs/ImagePosition.png">
+<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/position.png?raw=true">
 
 
 ## Other properties
@@ -57,3 +60,4 @@ SignButton(
 - btnColor
 - btnTextColor
 - elevation
+- width // You can change the value of width when the text size becomes too small.
