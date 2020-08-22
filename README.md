@@ -26,7 +26,7 @@ It very simple!
 SignButton(
   buttonType: ButtonType.google,
   onPressed: () {
-  print('click');
+   print('click');
   }).show()
 ```
 
@@ -38,7 +38,7 @@ SignButton(
   buttonType: ButtonType.google,
   buttonSize: ButtonSize.large, // small(default), medium, large
   onPressed: () {
-  print('click');
+   print('click');
   }).show()
 ```
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/size.png?raw=true">
@@ -49,7 +49,7 @@ SignButton(
   imagePosition: ImagePosition.left, // left or right
   buttonType: ButtonType.google,
   onPressed: () {
-  print('click');
+   print('click');
   }).show()
 ```
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/position.png?raw=true">
@@ -66,9 +66,7 @@ SignButton(
  //[width] Use if you change the text value.
  btnText: 'Pinterest',
  onPressed: () {
-   setState(() {
-     _buttonClick = "pinterest";
-   });
+  print('click');
  }).show()
 ```
 
