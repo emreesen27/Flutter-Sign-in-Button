@@ -2,6 +2,8 @@
 
 A Flutter plugin for generating sign in buttons for different social media accounts.
 
+dart.pub = https://pub.dev/packages/sign_button
+
 ## Getting Started
 
 You must add the library as a dependency to your project.
