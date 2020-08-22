@@ -7,7 +7,7 @@ A Flutter plugin for generating sign in buttons for different social media accou
 You must add the library as a dependency to your project.
 ```yaml
 dependencies:
- sign_button: ^0.0.3
+ sign_button: ^0.0.4
 ```
 
 You should then run `flutter packages get`
@@ -53,6 +53,26 @@ SignButton(
   }).show()
 ```
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/position.png?raw=true">
+
+```dart
+SignButton(
+ buttonType: ButtonType.pinterest,
+ imagePosition: ImagePosition.right,
+ //[buttonSize] You can also use this in combination with [width]. Increases the font and icon size of the button.
+ buttonSize: ButtonSize.large,
+ btnTextColor: Colors.grey,
+ btnColor: Colors.white,
+ width: 140,
+ //[width] Use if you change the text value.
+ btnText: 'Pinterest',
+ onPressed: () {
+   setState(() {
+     _buttonClick = "pinterest";
+   });
+ }).show()
+```
+
+<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/custom.png?raw=true">
 
 
 ## Other properties
