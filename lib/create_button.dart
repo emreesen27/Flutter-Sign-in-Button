@@ -11,6 +11,8 @@ class SignButton {
   String btnText;
   double elevation, width;
 
+  /// these variables take values ​​according to the button type selected.
+  /// [_image], [_fontSize], [_imageSize], [_buttonWidth], [_btnColor], [_btnTextColor], [_btnText]
   Widget _image;
   double _fontSize, _imageSize, _buttonWidth;
   Color _btnColor, _btnTextColor;
@@ -19,13 +21,12 @@ class SignButton {
   /// [buttonType] sets the style and icons of the button.
   /// [imagePosition] set the position of the icon.(left or right)
   /// [buttonSize] set the size of the button. (small medium large)
-
-  /// [buttonType], [onPressed] are required.
+  /// You can change the value of [width] when the text size becomes too small.
   SignButton({
     this.btnText,
     this.btnColor,
     this.btnTextColor,
-    this.width, /// You can change the value of width when the text size becomes too small.
+    this.width,
     this.buttonSize = ButtonSize.small,
     this.imagePosition = ImagePosition.left,
     this.elevation = 8.0,
@@ -33,6 +34,7 @@ class SignButton {
     @required this.onPressed,
   });
 
+  /// [buttonType], [onPressed] are required.
   ///You must call the "show()" method to view the SignButton class you have defined.
   Widget show() {
     _setButtonSize();
