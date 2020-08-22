@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SignButton(
                 buttonType: ButtonType.pinterest,
                 imagePosition: ImagePosition.right,
-                //[buttonSize] You can use it with [width]. It increases the font and icon size of the button.
+                //[buttonSize] You can also use this in combination with [width]. Increases the font and icon size of the button.
                 buttonSize: ButtonSize.large,
                 btnTextColor: Colors.grey,
                 btnColor: Colors.white,
