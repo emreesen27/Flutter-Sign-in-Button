@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 }).show(),
           ],
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ), 
     );
   }
 }
