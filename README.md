@@ -81,3 +81,4 @@ SignButton(
 - btnTextColor
 - elevation
 - width // You can change the value of width when the text size becomes too small.
+- padding
