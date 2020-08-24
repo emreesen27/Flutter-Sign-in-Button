@@ -20,3 +20,7 @@
 
 * Padding value has been made customizable.
 * Microsoft and youtube button added.
+
+## [0.0.6] -24.08.2020
+
+* Readme edited.

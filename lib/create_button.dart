@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
-import 'constants.dart';
 
 class SignButton {
   //values ​​of the variables are assigned later. You don't need to value it.
