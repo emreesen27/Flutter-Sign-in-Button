@@ -101,6 +101,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }).show(),
               SignButton(
+                  buttonType: ButtonType.tumblr,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "tumblr";
+                    });
+                  }).show(),
+              SignButton(
                   buttonType: ButtonType.pinterest,
                   onPressed: () {
                     setState(() {

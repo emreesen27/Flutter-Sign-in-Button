@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
+import 'constants.dart';
 
 class SignButton {
   //values ​​of the variables are assigned later. You don't need to value it.
@@ -170,7 +171,7 @@ class SignButton {
       case ButtonType.linkedin:
         _btnText = 'Sign in with LinkedIn';
         _btnTextColor = Colors.white;
-        _btnColor = Colors.blueGrey;
+        _btnColor = Color(0xff3282b8);
         _image = Image.asset(
           'images/linkedin.png',
           package: 'sign_button',
@@ -209,6 +210,18 @@ class SignButton {
         _btnColor = Color(0xff424874);
         _image = Image.asset(
           'images/microsoft.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.tumblr:
+        _btnText = 'Sign in with Tumblr';
+        _btnTextColor = Colors.white;
+        _btnColor = Color(0xff0f4c75);
+        _image = Image.asset(
+          'images/tumblr.png',
           package: 'sign_button',
           width: _imageSize,
           height: _imageSize,
