@@ -17,7 +17,7 @@ class SignButton {
   Color _btnColor, _btnTextColor;
   String _btnText;
 
-  /// [padding] The fill value is automatically adjusted according to the button size. You can give a value if you want.
+  /// [padding] padding value is automatically adjusted according to the button size. You can give a value if you want.
   /// [buttonType] sets the style and icons of the button.
   /// [imagePosition] set the position of the icon.(left or right)
   /// [buttonSize] set the size of the button. (small medium large)
