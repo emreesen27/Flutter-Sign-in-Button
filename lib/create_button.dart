@@ -12,7 +12,7 @@ class SignButton {
   double elevation, width;
 
   Widget _image;
-  double _fontSize, _imageSize, _buttonWidth;
+  double _fontSize, _imageSize, _buttonWidth, _padding;
   Color _btnColor, _btnTextColor;
   String _btnText;
 
@@ -55,7 +55,7 @@ class SignButton {
               : MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: EdgeInsets.all(_padding),
               child: imagePosition == ImagePosition.left
                   ? _image
                   : Text(
@@ -67,7 +67,7 @@ class SignButton {
                     ),
             ),
             Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: EdgeInsets.all(_padding),
               child: imagePosition == ImagePosition.left
                   ? Text(
                       btnText ?? _btnText,
@@ -86,14 +86,17 @@ class SignButton {
 
   void _setButtonSize() {
     if (buttonSize == ButtonSize.small) {
+      _padding = 5.0;
       _fontSize = 15.0;
       _imageSize = 24.0;
       _buttonWidth = 200;
     } else if (buttonSize == ButtonSize.medium) {
+      _padding = 6.0;
       _fontSize = 17.0;
       _imageSize = 28.0;
       _buttonWidth = 220;
     } else {
+      _padding = 7.0;
       _fontSize = 19.0;
       _imageSize = 32.0;
       _buttonWidth = 250;

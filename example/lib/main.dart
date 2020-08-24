@@ -93,7 +93,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
                 }).show(),
             SignButton(
-              buttonSize: ButtonSize.small,
                 buttonType: ButtonType.youtube,
                 onPressed: () {
                   setState(() {
