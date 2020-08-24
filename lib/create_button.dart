@@ -11,8 +11,6 @@ class SignButton {
   String btnText;
   double elevation, width;
 
-  /// these variables take values ​​according to the button type selected.
-  /// [_image], [_fontSize], [_imageSize], [_buttonWidth], [_btnColor], [_btnTextColor], [_btnText]
   Widget _image;
   double _fontSize, _imageSize, _buttonWidth;
   Color _btnColor, _btnTextColor;
@@ -103,76 +101,113 @@ class SignButton {
   }
 
   void _createStyle() {
-    if (buttonType == ButtonType.facebook) {
-      _btnText = 'Sign in with Facebook';
-      _btnTextColor = Colors.white;
-      _btnColor = Colors.blueAccent;
-      _image = Image.asset(
-        'images/facebook.png',
-        package: 'sign_button',
-        width: _imageSize,
-        height: _imageSize,
-      );
-    } else if (buttonType == ButtonType.github) {
-      _btnText = 'Sign in with Github';
-      _btnTextColor = Colors.white;
-      _btnColor = Color(0xee393e46);
-      _image = Image.asset(
-        'images/github.png',
-        package: 'sign_button',
-        width: _imageSize,
-        height: _imageSize,
-      );
-    } else if (buttonType == ButtonType.pinterest) {
-      _btnText = 'Sign in with Pinterest';
-      _btnTextColor = Colors.white;
-      _btnColor = Colors.redAccent;
-      _image = Image.asset(
-        'images/pinterest.png',
-        package: 'sign_button',
-        width: _imageSize,
-        height: _imageSize,
-      );
-    } else if (buttonType == ButtonType.apple) {
-      _btnText = 'Sign in with Apple';
-      _btnTextColor = Colors.black;
-      _btnColor = Color(0xfff7f7f7);
-      _image = Image.asset(
-        'images/apple.png',
-        package: 'sign_button',
-        width: _imageSize,
-        height: _imageSize,
-      );
-    } else if (buttonType == ButtonType.twitter) {
-      _btnText = 'Sign in with Twitter';
-      _btnTextColor = Colors.white;
-      _btnColor = Colors.lightBlueAccent;
-      _image = Image.asset(
-        'images/twitter.png',
-        package: 'sign_button',
-        width: _imageSize,
-        height: _imageSize,
-      );
-    } else if (buttonType == ButtonType.linkedin) {
-      _btnText = 'Sign in with LinkedIn';
-      _btnTextColor = Colors.white;
-      _btnColor = Colors.blueGrey;
-      _image = Image.asset(
-        'images/linkedin.png',
-        package: 'sign_button',
-        width: _imageSize,
-        height: _imageSize,
-      );
-    } else if (buttonType == ButtonType.google) {
-      _btnText = 'Sign in with Google';
-      _btnTextColor = Colors.black;
-      _btnColor = Color(0xfff7f7f7);
-      _image = Image.asset(
-        'images/google.png',
-        package: 'sign_button',
-        width: _imageSize,
-        height: _imageSize,
-      );
+    switch (buttonType) {
+      case ButtonType.facebook:
+        _btnText = 'Sign in with Facebook';
+        _btnTextColor = Colors.white;
+        _btnColor = Colors.blueAccent;
+        _image = Image.asset(
+          'images/facebook.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.github:
+        _btnText = 'Sign in with Github';
+        _btnTextColor = Colors.white;
+        _btnColor = Color(0xee393e46);
+        _image = Image.asset(
+          'images/github.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.pinterest:
+        _btnText = 'Sign in with Pinterest';
+        _btnTextColor = Colors.white;
+        _btnColor = Colors.redAccent;
+        _image = Image.asset(
+          'images/pinterest.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.apple:
+        _btnText = 'Sign in with Apple';
+        _btnTextColor = Colors.black;
+        _btnColor = Color(0xfff7f7f7);
+        _image = Image.asset(
+          'images/apple.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.twitter:
+        _btnText = 'Sign in with Twitter';
+        _btnTextColor = Colors.white;
+        _btnColor = Colors.lightBlueAccent;
+        _image = Image.asset(
+          'images/twitter.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.linkedin:
+        _btnText = 'Sign in with LinkedIn';
+        _btnTextColor = Colors.white;
+        _btnColor = Colors.blueGrey;
+        _image = Image.asset(
+          'images/linkedin.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.google:
+        _btnText = 'Sign in with Google';
+        _btnTextColor = Colors.black;
+        _btnColor = Color(0xfff7f7f7);
+        _image = Image.asset(
+          'images/google.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.youtube:
+        _btnText = 'Sign in with Youtube';
+        _btnTextColor = Colors.white;
+        _btnColor = Color(0xded63447);
+        _image = Image.asset(
+          'images/youtube.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.microsoft:
+        _btnText = 'Sign in with Microsoft';
+        _btnTextColor = Colors.white;
+        _btnColor = Color(0xff424874);
+        _image = Image.asset(
+          'images/microsoft.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
     }
   }
 }

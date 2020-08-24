@@ -92,6 +92,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     _buttonClick = "pinterest";
                   });
                 }).show(),
+            SignButton(
+              buttonSize: ButtonSize.small,
+                buttonType: ButtonType.youtube,
+                onPressed: () {
+                  setState(() {
+                    _buttonClick = "youtube";
+                  });
+                }).show(),
+            SignButton(
+                buttonType: ButtonType.microsoft,
+                onPressed: () {
+                  setState(() {
+                    _buttonClick = "microsoft";
+                  });
+                }).show(),
             //custom button
             SignButton(
                 buttonType: ButtonType.pinterest,
