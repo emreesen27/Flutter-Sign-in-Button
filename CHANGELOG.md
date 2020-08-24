@@ -15,3 +15,8 @@
 
 * Example added.
 * Readme edited.
+
+## [0.0.5] - 24.08.2020
+
+* Padding value has been made customizable.
+* Microsoft and youtube button added.
