@@ -6,6 +6,8 @@ enum ButtonType {
   twitter,
   linkedin,
   google,
+  youtube,
+  microsoft,
 }
 
 enum ImagePosition {
