@@ -32,7 +32,7 @@ SignButton(
   }).show()
 ```
 
-<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/buttons.png?raw=true">
+<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/btns.png?raw=true">
 
 ButtonSize
 ```dart
@@ -81,4 +81,4 @@ SignButton(
 - btnTextColor
 - elevation
 - width // You can change the value of width when the text size becomes too small.
-- padding
+- padding // padding value is automatically adjusted according to the button size. You can give a value if you want.
