@@ -24,3 +24,7 @@
 ## [0.0.6] -24.08.2020
 
 * Readme edited.
+
+## [0.0.7] -01.09.2020
+
+* Documentation comments edited.

@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class SignButton {
-  //values ​​of the variables are assigned later. You don't need to value it.
+  /// [padding] padding value is automatically adjusted according to the button size. You can give a value if you want.
+  /// [buttonType] sets the style and icons of the button.
+  /// [imagePosition] set the position of the icon.(left or right)
+  /// [buttonSize] set the size of the button. (small medium large)
+  /// You can change the value of [width] when the text size becomes too small.
+
   ButtonType buttonType;
   ImagePosition imagePosition;
   ButtonSize buttonSize;
@@ -11,16 +16,20 @@ class SignButton {
   String btnText;
   double elevation, width, padding;
 
+  /// [_image] It automatically takes value according to the selected button type.
+  /// [_imageSize] It automatically takes value according to the selected button size.
+  /// [_fontSize] It automatically takes value according to the selected button size
+  /// [_padding] This variable is used if no value is assigned to the padding.
+  /// [_btnText] This variable is used if no value is assigned to the btnText.
+  /// [_btnColor] This variable is used if no value is assigned to the btnColor.
+  /// [_buttonWidth] This variable is used if no value is assigned to the width.
+  /// [_btnTextColor] This variable is used if no value is assigned to the btnTextColor
+
   Widget _image;
   double _fontSize, _imageSize, _buttonWidth, _padding;
   Color _btnColor, _btnTextColor;
   String _btnText;
 
-  /// [padding] padding value is automatically adjusted according to the button size. You can give a value if you want.
-  /// [buttonType] sets the style and icons of the button.
-  /// [imagePosition] set the position of the icon.(left or right)
-  /// [buttonSize] set the size of the button. (small medium large)
-  /// You can change the value of [width] when the text size becomes too small.
   SignButton({
     this.padding,
     this.btnText,
