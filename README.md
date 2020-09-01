@@ -9,7 +9,7 @@ dart.pub = https://pub.dev/packages/sign_button
 You must add the library as a dependency to your project.
 ```yaml
 dependencies:
- sign_button: ^0.0.6
+ sign_button: ^0.0.7
 ```
 
 You should then run `flutter packages get`
