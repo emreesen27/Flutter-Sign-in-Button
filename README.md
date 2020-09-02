@@ -1,4 +1,4 @@
-# Sign Button
+# Sign In Button
 
 A Flutter plugin for generating sign in buttons for different social media accounts.
 
