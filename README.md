@@ -9,7 +9,7 @@ dart.pub = https://pub.dev/packages/sign_button
 You must add the library as a dependency to your project.
 ```yaml
 dependencies:
- sign_button: ^0.0.7
+ sign_button: ^0.0.8
 ```
 
 You should then run `flutter packages get`
@@ -25,39 +25,39 @@ import 'package:sign_button/sign_button.dart'
 It very simple!
 
 ```dart
-SignButton(
+SignInButton(
   buttonType: ButtonType.google,
   onPressed: () {
    print('click');
-  }).show()
+  })
 ```
 
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/btns.png?raw=true">
 
 ButtonSize
 ```dart
-SignButton(
+SignInButton(
   buttonType: ButtonType.google,
   buttonSize: ButtonSize.large, // small(default), medium, large
   onPressed: () {
    print('click');
-  }).show()
+  })
 ```
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/size.png?raw=true">
 
 ImagePosition
 ```dart
-SignButton(
+SignInButton(
   imagePosition: ImagePosition.left, // left or right
   buttonType: ButtonType.google,
   onPressed: () {
    print('click');
-  }).show()
+  })
 ```
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/position.png?raw=true">
 
 ```dart
-SignButton(
+SignInButton(
  buttonType: ButtonType.pinterest,
  imagePosition: ImagePosition.right,
  //[buttonSize] You can also use this in combination with [width]. Increases the font and icon size of the button.
@@ -69,7 +69,7 @@ SignButton(
  btnText: 'Pinterest',
  onPressed: () {
   print('click');
- }).show()
+ })
 ```
 
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/custom.png?raw=true">

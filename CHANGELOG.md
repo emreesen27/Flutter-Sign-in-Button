@@ -28,3 +28,8 @@
 ## [0.0.7] -01.09.2020
 
 * Documentation comments edited.
+
+## [0.0.8] -12.09.2020
+
+* Code optimization has been done.
+* Readme edited.

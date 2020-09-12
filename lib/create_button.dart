@@ -1,64 +1,82 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
-class SignButton {
-  /// [padding] padding value is automatically adjusted according to the button size. You can give a value if you want.
+// ignore: must_be_immutable
+class SignInButton extends StatelessWidget {
+  //required
   /// [buttonType] sets the style and icons of the button.
+  final ButtonType buttonType;
+
+  //required
+  /// [onPressed] Send a function to trigger the button.
+  final Function onPressed;
+
+  //not required, default left
   /// [imagePosition] set the position of the icon.(left or right)
+  final ImagePosition imagePosition;
+
+  //not required, default 5.0
+  /// [elevation] set the button's elevation value.
+  final double elevation;
+
+  //not required, default small
   /// [buttonSize] set the size of the button. (small medium large)
-  /// You can change the value of [width] when the text size becomes too small.
+  final ButtonSize buttonSize;
 
-  ButtonType buttonType;
-  ImagePosition imagePosition;
-  ButtonSize buttonSize;
-  Function onPressed;
-  Color btnColor, btnTextColor;
+  //not required, Gets value according to buttonType.
+  /// [btnColor] Set the background color of the button.
+  Color btnColor;
+
+  //not required, Gets value according to buttonType.
+  /// [btnTextColor] set the button's text color.
+  Color btnTextColor;
+
+  //not required, Gets value according to buttonType.
+  /// [btnText] set the button's text.
   String btnText;
-  double elevation, width, padding;
 
-  /// [_image] It automatically takes value according to the selected button type.
-  /// [_imageSize] It automatically takes value according to the selected button size.
-  /// [_fontSize] It automatically takes value according to the selected button size
-  /// [_padding] This variable is used if no value is assigned to the padding.
-  /// [_btnText] This variable is used if no value is assigned to the btnText.
-  /// [_btnColor] This variable is used if no value is assigned to the btnColor.
-  /// [_buttonWidth] This variable is used if no value is assigned to the width.
-  /// [_btnTextColor] This variable is used if no value is assigned to the btnTextColor
+  //not required, Gets value according to buttonSize.
+  /// You can change the value of [width] when the text size becomes too small.
+  double width;
 
+  //not required, Gets value according to buttonSize.
+  /// [padding] set the button's padding value.
+  double padding;
+
+  /// [_image] value cannot be assigned.Gets value according to [buttonType].
   Widget _image;
-  double _fontSize, _imageSize, _buttonWidth, _padding;
-  Color _btnColor, _btnTextColor;
-  String _btnText;
 
-  SignButton({
-    this.padding,
-    this.btnText,
-    this.btnColor,
-    this.btnTextColor,
-    this.width,
-    this.buttonSize = ButtonSize.small,
-    this.imagePosition = ImagePosition.left,
-    this.elevation = 5.0,
-    @required this.buttonType,
-    @required this.onPressed,
-  });
+  /// [_fontSize] value cannot be assigned.Gets value according to [buttonSize].
+  double _fontSize;
 
-  /// [buttonType], [onPressed] are required.
-  ///You must call the "show()" method to view the SignButton class you have defined.
-  Widget show() {
+  /// [_imageSize] value cannot be assigned.Gets value according to [buttonSize].
+  double _imageSize;
+
+  SignInButton(
+      {@required this.buttonType,
+      @required this.onPressed,
+      this.imagePosition: ImagePosition.left,
+      this.buttonSize: ButtonSize.small,
+      this.btnColor,
+      this.btnTextColor,
+      this.btnText,
+      this.elevation: 5.0,
+      this.width,
+      this.padding})
+      : assert(onPressed != null, 'onPressed is null!'),
+        assert(buttonType != null, 'buttonType is null');
+
+  @override
+  Widget build(BuildContext context) {
     _setButtonSize();
     _createStyle();
-
-    assert(onPressed != null, 'onPressed is null');
-    assert(buttonType != null, 'buttonType is null');
-
     return MaterialButton(
-      color: btnColor ?? _btnColor,
+      color: btnColor,
       shape: StadiumBorder(),
       onPressed: onPressed,
       elevation: elevation,
       child: Container(
-        width: width ?? _buttonWidth,
+        width: width,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: imagePosition == ImagePosition.left
@@ -66,25 +84,25 @@ class SignButton {
               : MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: EdgeInsets.all(padding ?? _padding),
+              padding: EdgeInsets.all(padding),
               child: imagePosition == ImagePosition.left
                   ? _image
                   : Text(
-                      btnText ?? _btnText,
+                      btnText,
                       style: TextStyle(
                         fontSize: _fontSize,
-                        color: btnTextColor ?? _btnTextColor,
+                        color: btnTextColor,
                       ),
                     ),
             ),
             Padding(
-              padding: EdgeInsets.all(padding ?? _padding),
+              padding: EdgeInsets.all(padding),
               child: imagePosition == ImagePosition.left
                   ? Text(
-                      btnText ?? _btnText,
+                      btnText,
                       style: TextStyle(
                         fontSize: _fontSize,
-                        color: btnTextColor ?? _btnTextColor,
+                        color: btnTextColor,
                       ),
                     )
                   : _image,
@@ -97,29 +115,29 @@ class SignButton {
 
   void _setButtonSize() {
     if (buttonSize == ButtonSize.small) {
-      _padding = 5.0;
+      padding ??= 5.0;
+      width ??= 200;
       _fontSize = 15.0;
       _imageSize = 24.0;
-      _buttonWidth = 200;
     } else if (buttonSize == ButtonSize.medium) {
-      _padding = 5.5;
+      padding ??= 5.5;
+      width ??= 220;
       _fontSize = 17.0;
       _imageSize = 28.0;
-      _buttonWidth = 220;
     } else {
-      _padding = 6.0;
+      padding ??= 6.0;
+      width ??= 250;
       _fontSize = 19.0;
       _imageSize = 32.0;
-      _buttonWidth = 250;
     }
   }
 
   void _createStyle() {
     switch (buttonType) {
       case ButtonType.facebook:
-        _btnText = 'Sign in with Facebook';
-        _btnTextColor = Colors.white;
-        _btnColor = Colors.blueAccent;
+        btnText ??= 'Sign in with Facebook';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Colors.blueAccent;
         _image = Image.asset(
           'images/facebook.png',
           package: 'sign_button',
@@ -129,9 +147,9 @@ class SignButton {
         break;
 
       case ButtonType.github:
-        _btnText = 'Sign in with Github';
-        _btnTextColor = Colors.white;
-        _btnColor = Color(0xee393e46);
+        btnText ??= 'Sign in with Github';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xee393e46);
         _image = Image.asset(
           'images/github.png',
           package: 'sign_button',
@@ -141,9 +159,9 @@ class SignButton {
         break;
 
       case ButtonType.pinterest:
-        _btnText = 'Sign in with Pinterest';
-        _btnTextColor = Colors.white;
-        _btnColor = Colors.redAccent;
+        btnText ??= 'Sign in with Pinterest';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Colors.redAccent;
         _image = Image.asset(
           'images/pinterest.png',
           package: 'sign_button',
@@ -153,9 +171,9 @@ class SignButton {
         break;
 
       case ButtonType.apple:
-        _btnText = 'Sign in with Apple';
-        _btnTextColor = Colors.black;
-        _btnColor = Color(0xfff7f7f7);
+        btnText ??= 'Sign in with Apple';
+        btnTextColor ??= Colors.black;
+        btnColor ??= Color(0xfff7f7f7);
         _image = Image.asset(
           'images/apple.png',
           package: 'sign_button',
@@ -165,9 +183,9 @@ class SignButton {
         break;
 
       case ButtonType.twitter:
-        _btnText = 'Sign in with Twitter';
-        _btnTextColor = Colors.white;
-        _btnColor = Colors.lightBlueAccent;
+        btnText ??= 'Sign in with Twitter';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Colors.lightBlueAccent;
         _image = Image.asset(
           'images/twitter.png',
           package: 'sign_button',
@@ -177,9 +195,9 @@ class SignButton {
         break;
 
       case ButtonType.linkedin:
-        _btnText = 'Sign in with LinkedIn';
-        _btnTextColor = Colors.white;
-        _btnColor = Color(0xff3282b8);
+        btnText ??= 'Sign in with LinkedIn';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xff3282b8);
         _image = Image.asset(
           'images/linkedin.png',
           package: 'sign_button',
@@ -189,9 +207,9 @@ class SignButton {
         break;
 
       case ButtonType.google:
-        _btnText = 'Sign in with Google';
-        _btnTextColor = Colors.black;
-        _btnColor = Color(0xfff7f7f7);
+        btnText ??= 'Sign in with Google';
+        btnTextColor ??= Colors.black;
+        btnColor ??= Color(0xfff7f7f7);
         _image = Image.asset(
           'images/google.png',
           package: 'sign_button',
@@ -201,9 +219,9 @@ class SignButton {
         break;
 
       case ButtonType.youtube:
-        _btnText = 'Sign in with Youtube';
-        _btnTextColor = Colors.white;
-        _btnColor = Color(0xded63447);
+        btnText ??= 'Sign in with Youtube';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xded63447);
         _image = Image.asset(
           'images/youtube.png',
           package: 'sign_button',
@@ -213,9 +231,9 @@ class SignButton {
         break;
 
       case ButtonType.microsoft:
-        _btnText = 'Sign in with Microsoft';
-        _btnTextColor = Colors.white;
-        _btnColor = Color(0xff424874);
+        btnText ??= 'Sign in with Microsoft';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xff424874);
         _image = Image.asset(
           'images/microsoft.png',
           package: 'sign_button',
@@ -225,9 +243,9 @@ class SignButton {
         break;
 
       case ButtonType.tumblr:
-        _btnText = 'Sign in with Tumblr';
-        _btnTextColor = Colors.white;
-        _btnColor = Color(0xff0f4c75);
+        btnText ??= 'Sign in with Tumblr';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xff0f4c75);
         _image = Image.asset(
           'images/tumblr.png',
           package: 'sign_button',
