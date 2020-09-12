@@ -47,71 +47,78 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(
                 height: 5.0,
               ),
-              SignButton(
+              SignInButton(
                   buttonType: ButtonType.apple,
                   onPressed: () {
                     setState(() {
                       _buttonClick = "apple";
                     });
-                  }).show(),
-              SignButton(
+                  }),
+              SignInButton(
                   buttonType: ButtonType.facebook,
                   onPressed: () {
                     setState(() {
                       _buttonClick = "facebook";
                     });
-                  }).show(),
-              SignButton(
+                  }),
+              SignInButton(
                   buttonType: ButtonType.twitter,
                   onPressed: () {
                     setState(() {
                       _buttonClick = "twitter";
                     });
-                  }).show(),
-              SignButton(
+                  }),
+              SignInButton(
                   buttonType: ButtonType.github,
                   onPressed: () {
                     setState(() {
                       _buttonClick = "github";
                     });
-                  }).show(),
-              SignButton(
+                  }),
+              SignInButton(
                   buttonType: ButtonType.google,
                   onPressed: () {
                     setState(() {
                       _buttonClick = "google";
                     });
-                  }).show(),
-              SignButton(
+                  }),
+              SignInButton(
                   buttonType: ButtonType.linkedin,
                   onPressed: () {
                     setState(() {
                       _buttonClick = "linkedIn";
                     });
-                  }).show(),
-              SignButton(
+                  }),
+              SignInButton(
                   buttonType: ButtonType.youtube,
                   onPressed: () {
                     setState(() {
                       _buttonClick = "youtube";
                     });
-                  }).show(),
-              SignButton(
+                  }),
+              SignInButton(
                   buttonType: ButtonType.microsoft,
                   onPressed: () {
                     setState(() {
                       _buttonClick = "microsoft";
                     });
-                  }).show(),
-              SignButton(
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.tumblr,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "tumblr";
+                    });
+                  }),
+              SignInButton(
                   buttonType: ButtonType.pinterest,
                   onPressed: () {
                     setState(() {
-                      _buttonClick = "pinterest";
+                      _buttonClick = "apple";
                     });
-                  }).show(),
+                  }),
               //custom button
-              SignButton(
+              SignInButton(
                   buttonType: ButtonType.pinterest,
                   imagePosition: ImagePosition.right,
                   //[buttonSize] You can also use this in combination with [width]. Increases the font and icon size of the button.
@@ -125,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() {
                       _buttonClick = "pinterest";
                     });
-                  }).show(),
+                  }),
             ],
           ),
         ),
