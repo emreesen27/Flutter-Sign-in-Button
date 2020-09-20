@@ -80,5 +80,6 @@ SignInButton(
 - btnColor
 - btnTextColor
 - elevation
+- shape
 - width // You can change the value of width when the text size becomes too small.
 - padding // padding value is automatically adjusted according to the button size. You can give a value if you want.
