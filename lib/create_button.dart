@@ -51,6 +51,10 @@ class SignInButton extends StatelessWidget {
 
   /// [_imageSize] value cannot be assigned.Gets value according to [buttonSize].
   double _imageSize;
+  
+  //not required, button shape.
+  /// [shape] set the button's shape.
+  ShapeBorder shape;
 
   SignInButton(
       {@required this.buttonType,
@@ -62,7 +66,8 @@ class SignInButton extends StatelessWidget {
       this.btnText,
       this.elevation: 5.0,
       this.width,
-      this.padding})
+      this.padding,
+      this.shape})
       : assert(onPressed != null, 'onPressed is null!'),
         assert(buttonType != null, 'buttonType is null');
 
@@ -72,7 +77,7 @@ class SignInButton extends StatelessWidget {
     _createStyle();
     return MaterialButton(
       color: btnColor,
-      shape: StadiumBorder(),
+      shape: shape ?? StadiumBorder(),
       onPressed: onPressed,
       elevation: elevation,
       child: Container(
