@@ -8,7 +8,10 @@ enum ButtonType {
   google,
   youtube,
   microsoft,
-  tumblr
+  tumblr,
+  mail,
+  reddit,
+  yahoo,
 }
 
 enum ImagePosition {

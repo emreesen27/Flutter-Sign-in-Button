@@ -117,6 +117,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "apple";
                     });
                   }),
+              SignInButton(
+                  buttonType: ButtonType.mail,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "Mail";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.reddit,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "reddit";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.yahoo,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "yahoo";
+                    });
+                  }),
               //custom button
               SignInButton(
                   buttonType: ButtonType.pinterest,

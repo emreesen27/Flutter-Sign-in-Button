@@ -51,7 +51,7 @@ class SignInButton extends StatelessWidget {
 
   /// [_imageSize] value cannot be assigned.Gets value according to [buttonSize].
   double _imageSize;
-  
+
   //not required, button shape.
   /// [shape] set the button's shape.
   ShapeBorder shape;
@@ -257,6 +257,43 @@ class SignInButton extends StatelessWidget {
           width: _imageSize,
           height: _imageSize,
         );
+        break;
+
+      case ButtonType.mail:
+        btnText ??= 'Sign in with Mail';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xff20639b);
+        _image = Image.asset(
+          'images/mail.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.reddit:
+        btnText ??= 'Sign in with Reddit';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xffc85417);
+        _image = Image.asset(
+          'images/reddit.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.yahoo:
+        btnText ??= 'Sign in with Yahoo';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xff7c5295);
+        _image = Image.asset(
+          'images/yahoo.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
     }
   }
 }

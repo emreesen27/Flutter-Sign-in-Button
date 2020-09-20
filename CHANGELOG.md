@@ -19,7 +19,7 @@
 ## [0.0.5] - 24.08.2020
 
 * Padding value has been made customizable.
-* Microsoft and youtube button added.
+* Microsoft and youtube buttons added.
 
 ## [0.0.6] -24.08.2020
 
@@ -33,3 +33,7 @@
 
 * Code optimization has been done.
 * Readme edited.
+
+## [0.0.9] -20.09.2020
+
+* Mail,Yahoo,Reddit buttons added.
