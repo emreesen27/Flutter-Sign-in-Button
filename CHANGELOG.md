@@ -37,3 +37,7 @@
 ## [0.0.9] -20.09.2020
 
 * Mail,Yahoo,Reddit buttons added.
+
+## [1.0.0] -10.10.2020
+
+* Mini button option added.
