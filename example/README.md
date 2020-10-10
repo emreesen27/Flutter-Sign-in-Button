@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Sign in Button Demo',
       home: MyHomePage(title: 'Sign in Button Demo'),
     );
@@ -114,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   buttonType: ButtonType.pinterest,
                   onPressed: () {
                     setState(() {
-                      _buttonClick = "apple";
+                      _buttonClick = "pinterest";
                     });
                   }),
               SignInButton(
@@ -154,6 +155,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "pinterest";
                     });
                   }),
+              SignInButton.mini(
+                  buttonSize: ButtonSize.small,
+                  buttonType: ButtonType.github,
+                  onPressed: () {})
             ],
           ),
         ),
