@@ -156,7 +156,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }),
               SignInButton.mini(
-                  buttonSize: ButtonSize.small,
                   buttonType: ButtonType.github,
                   onPressed: () {})
             ],

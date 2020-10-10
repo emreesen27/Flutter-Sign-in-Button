@@ -83,7 +83,6 @@ class SignInButton extends StatelessWidget {
     this.btnColor,
     this.elevation: 5.0,
     this.padding,
-    this.shape,
   })  : mini = true,
         assert(onPressed != null, 'onPressed is null!'),
         assert(buttonType != null, 'buttonType is null');
@@ -140,7 +139,7 @@ class SignInButton extends StatelessWidget {
             child: _image,
             elevation: elevation,
             padding: EdgeInsets.all(padding),
-            shape: shape ?? CircleBorder(),
+            shape: CircleBorder(),
           );
   }
 
