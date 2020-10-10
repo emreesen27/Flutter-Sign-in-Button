@@ -54,6 +54,7 @@ SignInButton(
 ```
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/position.png?raw=true">
 
+Customized button
 ```dart
 SignInButton(
  buttonType: ButtonType.pinterest,
@@ -71,6 +72,15 @@ SignInButton(
 ```
 
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/custom.png?raw=true">
+
+### Mini Button
+```dart
+SignInButton.mini(
+ buttonType: ButtonType.github,
+ onPressed: () {},
+),
+```
+<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/mini.png?raw=true">
 
 
 ## Other properties
