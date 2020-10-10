@@ -80,7 +80,7 @@ SignInButton.mini(
  onPressed: () {},
 ),
 ```
-<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/mini.png?raw=true">
+<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/mini_button.png?raw=true">
 
 
 ## Other properties
