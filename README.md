@@ -1,5 +1,4 @@
 # Sign In Button
-
 A Flutter plugin for generating sign in buttons for different social media accounts.
 
 ## Getting Started
@@ -83,7 +82,7 @@ SignInButton.mini(
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/mini_button.png?raw=true">
 
 
-## Other properties
+### Other properties
 - btnText 
 - btnColor
 - btnTextColor
