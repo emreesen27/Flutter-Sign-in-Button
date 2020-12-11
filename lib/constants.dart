@@ -12,6 +12,8 @@ enum ButtonType {
   mail,
   reddit,
   yahoo,
+  amazon,
+  quora,
 }
 
 enum ImagePosition {

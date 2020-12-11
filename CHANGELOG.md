@@ -41,3 +41,7 @@
 ## [1.0.0] -10.10.2020
 
 * Mini button option added.
+
+## [1.0.1] -11.12.2020
+
+* Amazon and Quora buttons added.

@@ -319,6 +319,30 @@ class SignInButton extends StatelessWidget {
           height: _imageSize,
         );
         break;
+
+      case ButtonType.amazon:
+        btnText ??= 'Sign in with Amazon';
+        btnTextColor ??= Colors.black87;
+        btnColor ??= Colors.white;
+        _image = Image.asset(
+          'images/amazon.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.quora:
+        btnText ??= 'Sign in with Quora';
+        btnTextColor ??= Colors.black87;
+        btnColor ??= Colors.white;
+        _image = Image.asset(
+          'images/quora.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
     }
   }
 }
