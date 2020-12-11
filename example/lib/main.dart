@@ -136,6 +136,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "yahoo";
                     });
                   }),
+              SignInButton(
+                  buttonType: ButtonType.amazon,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "amazon";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.quora,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "quora";
+                    });
+                  }),
               //custom button
               SignInButton(
                   buttonType: ButtonType.pinterest,
