@@ -88,5 +88,5 @@ SignInButton.mini(
 - btnTextColor
 - elevation
 - shape
-- width // You can change the value of width when the text size becomes too small.
-- padding // padding value is automatically adjusted according to the button size. You can give a value if you want.
+- width <span style="color:green;">You can change the value of width when the text size becomes too small.</span>
+- padding <span style="color:green;">Padding value is automatically adjusted according to the button size. You can give a value if you want.</span> 
