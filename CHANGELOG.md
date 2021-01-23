@@ -1,3 +1,9 @@
+## [1.0.2.nullsafety.0] - 23.01.2021
+
+* Null Safety migrated
+* bumped up version
+* updated CHANGELOG.md
+
 ## [0.0.1] - 21.08.2020
 
 * Initial build for flutter sign in button library.
