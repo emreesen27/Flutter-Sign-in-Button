@@ -63,6 +63,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }),
               SignInButton(
+                  buttonType: ButtonType.facebookDark,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "facebookDark";
+                    });
+                  }),
+              SignInButton(
                   buttonType: ButtonType.twitter,
                   onPressed: () {
                     setState(() {
@@ -81,6 +88,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     setState(() {
                       _buttonClick = "google";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.googleDark,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "googleDark";
                     });
                   }),
               SignInButton(
@@ -139,6 +153,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "yahoo";
                     });
                   }),
+              SignInButton(
+                  buttonType: ButtonType.amazon,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "amazon";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.quora,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "quora";
+                    });
+                  }),
               //custom button
               SignInButton(
                   buttonType: ButtonType.pinterest,
@@ -156,8 +184,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }),
               SignInButton.mini(
-                  buttonType: ButtonType.github,
-                  onPressed: () {})
+                buttonType: ButtonType.github,
+                onPressed: () {},
+              ),
             ],
           ),
         ),

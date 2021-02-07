@@ -1,11 +1,13 @@
 enum ButtonType {
   facebook,
+  facebookDark,
   github,
   pinterest,
   apple,
   twitter,
   linkedin,
   google,
+  googleDark,
   youtube,
   microsoft,
   tumblr,

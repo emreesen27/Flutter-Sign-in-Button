@@ -6,7 +6,7 @@ A Flutter plugin for generating sign in buttons for different social media accou
 You must add the library as a dependency to your project.
 ```yaml
 dependencies:
- sign_button: ^1.0.1
+ sign_button: ^1.0.2
 ```
 
 You should then run `flutter packages get`

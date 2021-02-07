@@ -45,3 +45,7 @@
 ## [1.0.1] -11.12.2020
 
 * Amazon and Quora buttons added.
+
+## [1.0.2] - 0.7.02.2021
+
+* Facebook and google dark buttons added.
