@@ -9,10 +9,12 @@ dependencies:
  sign_button: ^1.0.2
 ```
 
+Prerelease:
 ```yaml
 dependencies:
  sign_button: ^2.0.0-nullsafety.0
 ```
+
 
 You should then run `flutter packages get`
 
