@@ -1,9 +1,3 @@
-## [1.0.2.nullsafety.0] - 23.01.2021
-
-* Null Safety migrated
-* bumped up version
-* updated CHANGELOG.md
-
 ## [0.0.1] - 21.08.2020
 
 * Initial build for flutter sign in button library.
@@ -55,3 +49,7 @@
 ## [1.0.2] - 0.7.02.2021
 
 * Facebook and google dark buttons added.
+
+## [2.0.0-nullsafety.0] - 28.03.2021
+
+* Null Safety migrated
