@@ -163,9 +163,21 @@ class SignInButton extends StatelessWidget {
       case ButtonType.facebook:
         btnText ??= 'Sign in with Facebook';
         btnTextColor ??= Colors.white;
-        btnColor ??= Colors.blueAccent;
+        btnColor ??= Color(0xFF1877F2);
         _image = Image.asset(
           'images/facebook.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
+      case ButtonType.facebookDark:
+        btnText ??= 'Sign in with Facebook';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Colors.black;
+        _image = Image.asset(
+          'images/facebook_dark.png',
           package: 'sign_button',
           width: _imageSize,
           height: _imageSize,
@@ -211,7 +223,7 @@ class SignInButton extends StatelessWidget {
       case ButtonType.twitter:
         btnText ??= 'Sign in with Twitter';
         btnTextColor ??= Colors.white;
-        btnColor ??= Colors.lightBlueAccent;
+        btnColor ??= Color(0xFF1DA1F2);
         _image = Image.asset(
           'images/twitter.png',
           package: 'sign_button',
@@ -223,7 +235,7 @@ class SignInButton extends StatelessWidget {
       case ButtonType.linkedin:
         btnText ??= 'Sign in with LinkedIn';
         btnTextColor ??= Colors.white;
-        btnColor ??= Color(0xff3282b8);
+        btnColor ??= Color(0xFF3282B8);
         _image = Image.asset(
           'images/linkedin.png',
           package: 'sign_button',
@@ -244,10 +256,22 @@ class SignInButton extends StatelessWidget {
         );
         break;
 
+      case ButtonType.googleDark:
+        btnText ??= 'Sign in with Google';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xFF4285F4);
+        _image = Image.asset(
+          'images/google_dark.png',
+          package: 'sign_button',
+          width: _imageSize,
+          height: _imageSize,
+        );
+        break;
+
       case ButtonType.youtube:
         btnText ??= 'Sign in with Youtube';
-        btnTextColor ??= Colors.white;
-        btnColor ??= Color(0xded63447);
+        btnTextColor ??= Colors.black;
+        btnColor ??= Colors.white;
         _image = Image.asset(
           'images/youtube.png',
           package: 'sign_button',
@@ -259,7 +283,7 @@ class SignInButton extends StatelessWidget {
       case ButtonType.microsoft:
         btnText ??= 'Sign in with Microsoft';
         btnTextColor ??= Colors.white;
-        btnColor ??= Color(0xff424874);
+        btnColor ??= Color(0xFF2F2F2F);
         _image = Image.asset(
           'images/microsoft.png',
           package: 'sign_button',
@@ -271,7 +295,7 @@ class SignInButton extends StatelessWidget {
       case ButtonType.tumblr:
         btnText ??= 'Sign in with Tumblr';
         btnTextColor ??= Colors.white;
-        btnColor ??= Color(0xff0f4c75);
+        btnColor ??= Color(0xFF0F4C75);
         _image = Image.asset(
           'images/tumblr.png',
           package: 'sign_button',
@@ -283,7 +307,7 @@ class SignInButton extends StatelessWidget {
       case ButtonType.mail:
         btnText ??= 'Sign in with Mail';
         btnTextColor ??= Colors.white;
-        btnColor ??= Color(0xff20639b);
+        btnColor ??= Color(0xFF20639B);
         _image = Image.asset(
           'images/mail.png',
           package: 'sign_button',
@@ -295,7 +319,7 @@ class SignInButton extends StatelessWidget {
       case ButtonType.reddit:
         btnText ??= 'Sign in with Reddit';
         btnTextColor ??= Colors.white;
-        btnColor ??= Color(0xffc85417);
+        btnColor ??= Color(0xFFC85417);
         _image = Image.asset(
           'images/reddit.png',
           package: 'sign_button',
@@ -307,7 +331,7 @@ class SignInButton extends StatelessWidget {
       case ButtonType.yahoo:
         btnText ??= 'Sign in with Yahoo';
         btnTextColor ??= Colors.white;
-        btnColor ??= Color(0xff7c5295);
+        btnColor ??= Color(0xFF7C5295);
         _image = Image.asset(
           'images/yahoo.png',
           package: 'sign_button',

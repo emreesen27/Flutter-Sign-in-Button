@@ -60,6 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }),
               SignInButton(
+                  buttonType: ButtonType.facebookDark,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "facebookDark";
+                    });
+                  }),
+              SignInButton(
                   buttonType: ButtonType.twitter,
                   onPressed: () {
                     setState(() {
@@ -78,6 +85,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     setState(() {
                       _buttonClick = "google";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.googleDark,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "googleDark";
                     });
                   }),
               SignInButton(
