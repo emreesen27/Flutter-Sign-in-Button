@@ -13,7 +13,7 @@ class SignInButton extends StatelessWidget {
 
   //not required, default left
   /// [imagePosition] set the position of the icon.(left or right)
-  ImagePosition imagePosition;
+  ImagePosition? imagePosition;
 
   //not required, default 5.0
   /// [elevation] set the button's elevation value.
@@ -25,44 +25,44 @@ class SignInButton extends StatelessWidget {
 
   //not required, Gets value according to buttonType.
   /// [btnColor] Set the background color of the button.
-  Color btnColor;
+  Color? btnColor;
 
   //not required, Gets value according to buttonType.
   /// [btnTextColor] set the button's text color.
-  Color btnTextColor;
+  Color? btnTextColor;
 
   //not required, Gets value according to buttonType.
   /// [btnText] set the button's text.
-  String btnText;
+  String? btnText;
 
   //not required, Gets value according to buttonSize.
   /// You can change the value of [width] when the text size becomes too small.
-  double width;
+  double? width;
 
   //not required, Gets value according to buttonSize.
   /// [padding] set the button's padding value.
-  double padding;
+  double? padding;
 
   /// [_image] value cannot be assigned.Gets value according to [buttonType].
-  Widget _image;
+  Widget? _image;
 
   /// [_fontSize] value cannot be assigned.Gets value according to [buttonSize].
-  double _fontSize;
+  double? _fontSize;
 
   /// [_imageSize] value cannot be assigned.Gets value according to [buttonSize].
-  double _imageSize;
+  double? _imageSize;
 
   //not required, button shape.
   /// [shape] set the button's shape.
-  ShapeBorder shape;
+  ShapeBorder? shape;
 
   //not required, button model.
   /// [mini] It automatically takes value according to the selected constructor.
   bool mini;
 
   SignInButton({
-    @required this.buttonType,
-    @required this.onPressed,
+    required this.buttonType,
+    required this.onPressed,
     this.imagePosition: ImagePosition.left,
     this.buttonSize: ButtonSize.small,
     this.btnColor,
@@ -72,20 +72,16 @@ class SignInButton extends StatelessWidget {
     this.width,
     this.padding,
     this.shape,
-  })  : mini = false,
-        assert(onPressed != null, 'onPressed is null!'),
-        assert(buttonType != null, 'buttonType is null');
+  }) : mini = false;
 
   SignInButton.mini({
-    @required this.buttonType,
-    @required this.onPressed,
+    required this.buttonType,
+    required this.onPressed,
     this.buttonSize: ButtonSize.small,
     this.btnColor,
     this.elevation: 5.0,
     this.padding,
-  })  : mini = true,
-        assert(onPressed != null, 'onPressed is null!'),
-        assert(buttonType != null, 'buttonType is null');
+  }) : mini = true;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +91,7 @@ class SignInButton extends StatelessWidget {
         ? MaterialButton(
             color: btnColor,
             shape: shape ?? StadiumBorder(),
-            onPressed: onPressed,
+            onPressed: onPressed as void Function()?,
             elevation: elevation,
             child: Container(
               width: width,
@@ -106,11 +102,11 @@ class SignInButton extends StatelessWidget {
                     : MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(padding),
+                    padding: EdgeInsets.all(padding!),
                     child: imagePosition == ImagePosition.left
                         ? _image
                         : Text(
-                            btnText,
+                            btnText!,
                             style: TextStyle(
                               fontSize: _fontSize,
                               color: btnTextColor,
@@ -118,10 +114,10 @@ class SignInButton extends StatelessWidget {
                           ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(padding),
+                    padding: EdgeInsets.all(padding!),
                     child: imagePosition == ImagePosition.left
                         ? Text(
-                            btnText,
+                            btnText!,
                             style: TextStyle(
                               fontSize: _fontSize,
                               color: btnTextColor,
@@ -134,11 +130,11 @@ class SignInButton extends StatelessWidget {
             ),
           )
         : MaterialButton(
-            onPressed: onPressed,
+            onPressed: onPressed as void Function()?,
             color: btnColor,
             child: _image,
             elevation: elevation,
-            padding: EdgeInsets.all(padding),
+            padding: EdgeInsets.all(padding!),
             shape: CircleBorder(),
           );
   }
