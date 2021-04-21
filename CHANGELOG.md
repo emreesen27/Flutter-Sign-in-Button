@@ -50,6 +50,6 @@
 
 * Facebook and google dark buttons added.
 
-## [2.0.0-nullsafety.0] - 28.03.2021
+## [2.0.0] - 21.04.2021
 
 * Null Safety migrated
