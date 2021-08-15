@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
@@ -9,7 +10,7 @@ class SignInButton extends StatelessWidget {
 
   //required
   /// [onPressed] Send a function to trigger the button.
-  Function onPressed;
+  VoidCallback? onPressed;
 
   //not required, default left
   /// [imagePosition] set the position of the icon.(left or right)
@@ -28,8 +29,16 @@ class SignInButton extends StatelessWidget {
   Color? btnColor;
 
   //not required, Gets value according to buttonType.
+  /// [btnDisabledColor] Set the background color of the disabled button.
+  Color? btnDisabledColor;
+
+  //not required, Gets value according to buttonType.
   /// [btnTextColor] set the button's text color.
   Color? btnTextColor;
+
+  //not required, Gets value according to buttonType.
+  /// [btnDisabledTextColor] set the disabled button's text color.
+  Color? btnDisabledTextColor;
 
   //not required, Gets value according to buttonType.
   /// [btnText] set the button's text.
@@ -66,7 +75,9 @@ class SignInButton extends StatelessWidget {
     this.imagePosition: ImagePosition.left,
     this.buttonSize: ButtonSize.small,
     this.btnColor,
+    this.btnDisabledColor,
     this.btnTextColor,
+    this.btnDisabledTextColor,
     this.btnText,
     this.elevation: 5.0,
     this.width,
@@ -79,19 +90,25 @@ class SignInButton extends StatelessWidget {
     required this.onPressed,
     this.buttonSize: ButtonSize.small,
     this.btnColor,
+    this.btnDisabledColor,
     this.elevation: 5.0,
     this.padding,
   }) : mini = true;
 
+  bool get _enabled => onPressed != null;
+
+  bool get _disabled => !_enabled;
+
   @override
   Widget build(BuildContext context) {
     _setButtonSize();
-    _createStyle();
+    _createStyle(context);
     return !mini
         ? MaterialButton(
             color: btnColor,
+            disabledColor: btnDisabledColor,
             shape: shape ?? StadiumBorder(),
-            onPressed: onPressed as void Function()?,
+            onPressed: onPressed,
             elevation: elevation,
             child: Container(
               width: width,
@@ -105,24 +122,12 @@ class SignInButton extends StatelessWidget {
                     padding: EdgeInsets.all(padding!),
                     child: imagePosition == ImagePosition.left
                         ? _image
-                        : Text(
-                            btnText!,
-                            style: TextStyle(
-                              fontSize: _fontSize,
-                              color: btnTextColor,
-                            ),
-                          ),
+                        : _text(),
                   ),
                   Padding(
                     padding: EdgeInsets.all(padding!),
                     child: imagePosition == ImagePosition.left
-                        ? Text(
-                            btnText!,
-                            style: TextStyle(
-                              fontSize: _fontSize,
-                              color: btnTextColor,
-                            ),
-                          )
+                        ? _text()
                         : _image,
                   ),
                 ],
@@ -130,13 +135,24 @@ class SignInButton extends StatelessWidget {
             ),
           )
         : MaterialButton(
-            onPressed: onPressed as void Function()?,
+            onPressed: onPressed,
             color: btnColor,
+            disabledColor: btnDisabledColor,
             child: _image,
             elevation: elevation,
             padding: EdgeInsets.all(padding!),
             shape: CircleBorder(),
           );
+  }
+
+  Widget _text() {
+    return Text(
+      btnText!,
+      style: TextStyle(
+        fontSize: _fontSize,
+        color: _enabled ? btnTextColor : btnDisabledTextColor,
+      ),
+    );
   }
 
   void _setButtonSize() {
@@ -158,210 +174,130 @@ class SignInButton extends StatelessWidget {
     }
   }
 
-  void _createStyle() {
+  void _createStyle(BuildContext context) {
+    btnDisabledColor ??= Theme.of(context).disabledColor.withOpacity(0.12);
+    btnDisabledTextColor ??= Theme.of(context).disabledColor.withOpacity(0.38);
+
+    _image = Image.asset(
+      'images/${describeEnum(buttonType)}.png',
+      package: 'sign_button',
+      width: _imageSize,
+      height: _imageSize,
+    );
+
+    if (_disabled) {
+      _image = ColorFiltered(
+        colorFilter: ColorFilter.matrix(<double>[
+          0.2126,0.7152,0.0722,0,0,
+          0.2126,0.7152,0.0722,0,0,
+          0.2126,0.7152,0.0722,0,0,
+          0,0,0,1,0,
+        ]),
+        child: _image,
+      );
+    }
+
     switch (buttonType) {
       case ButtonType.facebook:
         btnText ??= 'Sign in with Facebook';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF1877F2);
-        _image = Image.asset(
-          'images/facebook.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.facebookDark:
         btnText ??= 'Sign in with Facebook';
         btnTextColor ??= Colors.white;
         btnColor ??= Colors.black;
-        _image = Image.asset(
-          'images/facebook_dark.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.github:
         btnText ??= 'Sign in with Github';
         btnTextColor ??= Colors.black87;
         btnColor ??= Colors.white;
-        _image = Image.asset(
-          'images/github.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.pinterest:
         btnText ??= 'Sign in with Pinterest';
         btnTextColor ??= Colors.white;
         btnColor ??= Colors.redAccent;
-        _image = Image.asset(
-          'images/pinterest.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.apple:
         btnText ??= 'Sign in with Apple';
         btnTextColor ??= Colors.black;
         btnColor ??= Color(0xfff7f7f7);
-        _image = Image.asset(
-          'images/apple.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.twitter:
         btnText ??= 'Sign in with Twitter';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF1DA1F2);
-        _image = Image.asset(
-          'images/twitter.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.linkedin:
         btnText ??= 'Sign in with LinkedIn';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF3282B8);
-        _image = Image.asset(
-          'images/linkedin.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.google:
         btnText ??= 'Sign in with Google';
         btnTextColor ??= Colors.black;
         btnColor ??= Color(0xfff7f7f7);
-        _image = Image.asset(
-          'images/google.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.googleDark:
         btnText ??= 'Sign in with Google';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF4285F4);
-        _image = Image.asset(
-          'images/google_dark.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.youtube:
         btnText ??= 'Sign in with Youtube';
         btnTextColor ??= Colors.black;
         btnColor ??= Colors.white;
-        _image = Image.asset(
-          'images/youtube.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.microsoft:
         btnText ??= 'Sign in with Microsoft';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF2F2F2F);
-        _image = Image.asset(
-          'images/microsoft.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.tumblr:
         btnText ??= 'Sign in with Tumblr';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF0F4C75);
-        _image = Image.asset(
-          'images/tumblr.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.mail:
         btnText ??= 'Sign in with Mail';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF20639B);
-        _image = Image.asset(
-          'images/mail.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.reddit:
         btnText ??= 'Sign in with Reddit';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFFC85417);
-        _image = Image.asset(
-          'images/reddit.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.yahoo:
         btnText ??= 'Sign in with Yahoo';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF7C5295);
-        _image = Image.asset(
-          'images/yahoo.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.amazon:
         btnText ??= 'Sign in with Amazon';
         btnTextColor ??= Colors.black87;
         btnColor ??= Colors.white;
-        _image = Image.asset(
-          'images/amazon.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
 
       case ButtonType.quora:
         btnText ??= 'Sign in with Quora';
         btnTextColor ??= Colors.black87;
         btnColor ??= Colors.white;
-        _image = Image.asset(
-          'images/quora.png',
-          package: 'sign_button',
-          width: _imageSize,
-          height: _imageSize,
-        );
         break;
     }
   }
