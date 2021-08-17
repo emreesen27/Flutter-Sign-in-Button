@@ -14,14 +14,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Sign in Button Demo',
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
       home: MyHomePage(title: 'Sign in Button Demo'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
+  MyHomePage({Key? key, this.title}) : super(key: key);
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -34,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title!),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -53,6 +56,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     setState(() {
                       _buttonClick = "apple";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.appleDark,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "appleDark";
                     });
                   }),
               SignInButton(
@@ -167,6 +180,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "quora";
                     });
                   }),
+              SignInButton(
+                  buttonType: ButtonType.instagram,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "instagram";
+                    });
+                  }),
               //custom button
               SignInButton(
                   buttonType: ButtonType.pinterest,
@@ -183,9 +203,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "pinterest";
                     });
                   }),
+              //disabled button
+              SignInButton(
+                  buttonType: ButtonType.yahoo,
+                  //btnDisabledColor: Colors.grey,
+                  //btnDisabledTextColor: Colors.grey[700],
+                  onPressed: null),
               SignInButton.mini(
                 buttonType: ButtonType.github,
                 onPressed: () {},
+              ),
+              //disabled mini button
+              SignInButton.mini(
+                buttonType: ButtonType.github,
+                //btnDisabledColor: Colors.grey,
+                onPressed: null,
               ),
             ],
           ),
