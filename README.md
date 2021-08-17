@@ -53,7 +53,7 @@ SignInButton(
 ```
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/position.png?raw=true">
 
-Customized button
+Customized Button
 ```dart
 SignInButton(
  buttonType: ButtonType.pinterest,
@@ -71,6 +71,19 @@ SignInButton(
 ```
 
 <img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/custom.png?raw=true">
+
+
+Disabled Button
+
+```dart
+SignInButton(
+ buttonType: ButtonType.facebook,
+ onPressed: null,
+),
+```
+
+<img src = "https://github.com/emreesen27/Flutter-Sign-Button/blob/assets/disabled_btn.png?raw=true">
+
 
 ### Mini Button
 ```dart
