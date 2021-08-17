@@ -11,6 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Sign in Button Demo',
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
       home: MyHomePage(title: 'Sign in Button Demo'),
     );
   }
@@ -180,9 +183,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "pinterest";
                     });
                   }),
+              //disabled button
+              SignInButton(
+                  buttonType: ButtonType.yahoo,
+                  //btnDisabledColor: Colors.grey,
+                  //btnDisabledTextColor: Colors.grey[700],
+                  onPressed: null
+              ),
               SignInButton.mini(
                 buttonType: ButtonType.github,
                 onPressed: () {},
+              ),
+              //disabled mini button
+              SignInButton.mini(
+                buttonType: ButtonType.quora,
+                //btnDisabledColor: Colors.grey,
+                onPressed: null,
               ),
             ],
           ),
