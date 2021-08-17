@@ -56,6 +56,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }),
               SignInButton(
+                  buttonType: ButtonType.appleDark,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "appleDark";
+                    });
+                  }),
+              SignInButton(
                   buttonType: ButtonType.facebook,
                   onPressed: () {
                     setState(() {
@@ -167,6 +177,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "quora";
                     });
                   }),
+              SignInButton(
+                  buttonType: ButtonType.instagram,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "instagram";
+                    });
+                  }),
               //custom button
               SignInButton(
                   buttonType: ButtonType.pinterest,
@@ -188,15 +205,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   buttonType: ButtonType.yahoo,
                   //btnDisabledColor: Colors.grey,
                   //btnDisabledTextColor: Colors.grey[700],
-                  onPressed: null
-              ),
+                  onPressed: null),
               SignInButton.mini(
                 buttonType: ButtonType.github,
                 onPressed: () {},
               ),
               //disabled mini button
               SignInButton.mini(
-                buttonType: ButtonType.quora,
+                buttonType: ButtonType.github,
                 //btnDisabledColor: Colors.grey,
                 onPressed: null,
               ),

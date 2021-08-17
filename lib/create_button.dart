@@ -120,15 +120,13 @@ class SignInButton extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.all(padding!),
-                    child: imagePosition == ImagePosition.left
-                        ? _image
-                        : _text(),
+                    child:
+                        imagePosition == ImagePosition.left ? _image : _text(),
                   ),
                   Padding(
                     padding: EdgeInsets.all(padding!),
-                    child: imagePosition == ImagePosition.left
-                        ? _text()
-                        : _image,
+                    child:
+                        imagePosition == ImagePosition.left ? _text() : _image,
                   ),
                 ],
               ),
@@ -228,6 +226,12 @@ class SignInButton extends StatelessWidget {
         btnColor ??= Color(0xfff7f7f7);
         break;
 
+      case ButtonType.appleDark:
+        btnText ??= 'Sign in with Apple';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Colors.black;
+        break;
+
       case ButtonType.twitter:
         btnText ??= 'Sign in with Twitter';
         btnTextColor ??= Colors.white;
@@ -296,6 +300,12 @@ class SignInButton extends StatelessWidget {
 
       case ButtonType.quora:
         btnText ??= 'Sign in with Quora';
+        btnTextColor ??= Colors.black87;
+        btnColor ??= Colors.white;
+        break;
+
+      case ButtonType.instagram:
+        btnText ??= 'Sign in with Instagram';
         btnTextColor ??= Colors.black87;
         btnColor ??= Colors.white;
         break;

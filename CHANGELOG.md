@@ -53,3 +53,8 @@
 ## [2.0.0] - 21.04.2021
 
 * Null Safety migrated
+
+## [2.0.1] - 17.08.2021
+
+* Instagram and appleDark button added.
+* Possibility to disable buttons (thx Florian Laforest)

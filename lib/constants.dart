@@ -4,6 +4,7 @@ enum ButtonType {
   github,
   pinterest,
   apple,
+  appleDark,
   twitter,
   linkedin,
   google,
@@ -16,6 +17,7 @@ enum ButtonType {
   yahoo,
   amazon,
   quora,
+  instagram
 }
 
 enum ImagePosition {
