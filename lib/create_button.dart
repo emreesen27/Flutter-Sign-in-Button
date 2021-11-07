@@ -214,6 +214,12 @@ class SignInButton extends StatelessWidget {
         btnColor ??= Colors.white;
         break;
 
+      case ButtonType.githubDark:
+        btnText ??= "Sign in with Github";
+        btnTextColor ??= Colors.white70;
+        btnColor ??= Color(0xff212121);
+        break;
+
       case ButtonType.pinterest:
         btnText ??= 'Sign in with Pinterest';
         btnTextColor ??= Colors.white;

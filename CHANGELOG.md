@@ -21,28 +21,28 @@
 * Padding value has been made customizable.
 * Microsoft and youtube buttons added.
 
-## [0.0.6] -24.08.2020
+## [0.0.6] - 24.08.2020
 
 * Readme edited.
 
-## [0.0.7] -01.09.2020
+## [0.0.7] - 01.09.2020
 
 * Documentation comments edited.
 
-## [0.0.8] -12.09.2020
+## [0.0.8] - 12.09.2020
 
 * Code optimization has been done.
 * Readme edited.
 
-## [0.0.9] -20.09.2020
+## [0.0.9] - 20.09.2020
 
 * Mail,Yahoo,Reddit buttons added.
 
-## [1.0.0] -10.10.2020
+## [1.0.0] - 10.10.2020
 
 * Mini button option added.
 
-## [1.0.1] -11.12.2020
+## [1.0.1] - 11.12.2020
 
 * Amazon and Quora buttons added.
 
@@ -58,3 +58,7 @@
 
 * Instagram and appleDark button added.
 * Possibility to disable buttons (thx Florian Laforest)
+
+## [2.0.2] - 07.11.2021
+
+* Github dark button added.

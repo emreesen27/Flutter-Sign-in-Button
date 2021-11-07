@@ -2,6 +2,7 @@ enum ButtonType {
   facebook,
   facebookDark,
   github,
+  githubDark,
   pinterest,
   apple,
   appleDark,

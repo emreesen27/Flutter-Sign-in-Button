@@ -97,6 +97,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }),
               SignInButton(
+                  buttonType: ButtonType.githubDark,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "githubDark";
+                    });
+                  }),
+              SignInButton(
                   buttonType: ButtonType.google,
                   onPressed: () {
                     setState(() {
