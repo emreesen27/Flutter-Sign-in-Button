@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Text(
                 '$_buttonClick',
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
               SizedBox(
                 height: 5.0,
