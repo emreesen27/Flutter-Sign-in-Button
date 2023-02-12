@@ -72,14 +72,14 @@ class SignInButton extends StatelessWidget {
   SignInButton({
     required this.buttonType,
     required this.onPressed,
-    this.imagePosition: ImagePosition.left,
-    this.buttonSize: ButtonSize.small,
+    this.imagePosition = ImagePosition.left,
+    this.buttonSize = ButtonSize.small,
     this.btnColor,
     this.btnDisabledColor,
     this.btnTextColor,
     this.btnDisabledTextColor,
     this.btnText,
-    this.elevation: 5.0,
+    this.elevation = 5.0,
     this.width,
     this.padding,
     this.shape,
@@ -88,10 +88,10 @@ class SignInButton extends StatelessWidget {
   SignInButton.mini({
     required this.buttonType,
     required this.onPressed,
-    this.buttonSize: ButtonSize.small,
+    this.buttonSize = ButtonSize.small,
     this.btnColor,
     this.btnDisabledColor,
-    this.elevation: 5.0,
+    this.elevation = 5.0,
     this.padding,
   }) : mini = true;
 
