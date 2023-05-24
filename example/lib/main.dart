@@ -136,6 +136,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }),
               SignInButton(
+                  buttonType: ButtonType.discord,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "discord";
+                    });
+                  }),
+              SignInButton(
                   buttonType: ButtonType.tumblr,
                   onPressed: () {
                     setState(() {
