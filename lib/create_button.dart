@@ -186,10 +186,26 @@ class SignInButton extends StatelessWidget {
     if (_disabled) {
       _image = ColorFiltered(
         colorFilter: ColorFilter.matrix(<double>[
-          0.2126,0.7152,0.0722,0,0,
-          0.2126,0.7152,0.0722,0,0,
-          0.2126,0.7152,0.0722,0,0,
-          0,0,0,1,0,
+          0.2126,
+          0.7152,
+          0.0722,
+          0,
+          0,
+          0.2126,
+          0.7152,
+          0.0722,
+          0,
+          0,
+          0.2126,
+          0.7152,
+          0.0722,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
         ]),
         child: _image,
       );
@@ -200,6 +216,11 @@ class SignInButton extends StatelessWidget {
         btnText ??= 'Sign in with Facebook';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF1877F2);
+        break;
+      case ButtonType.discord:
+        btnText ??= "Sign in with Discord";
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xFF5865F2);
         break;
 
       case ButtonType.facebookDark:
