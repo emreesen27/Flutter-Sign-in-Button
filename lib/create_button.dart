@@ -220,7 +220,7 @@ class SignInButton extends StatelessWidget {
       case ButtonType.discord:
         btnText ??= "Sign in with Discord";
         btnTextColor ??= Colors.white;
-        btnColor ??= Color.fromRGBO(88, 101, 241, 1);
+        btnColor ??= Color(0xFF5865F2);
         break;
 
       case ButtonType.facebookDark:
