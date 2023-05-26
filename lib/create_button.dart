@@ -186,26 +186,10 @@ class SignInButton extends StatelessWidget {
     if (_disabled) {
       _image = ColorFiltered(
         colorFilter: ColorFilter.matrix(<double>[
-          0.2126,
-          0.7152,
-          0.0722,
-          0,
-          0,
-          0.2126,
-          0.7152,
-          0.0722,
-          0,
-          0,
-          0.2126,
-          0.7152,
-          0.0722,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
+          0.2126, 0.7152, 0.0722, 0, 0, // R1
+          0.2126, 0.7152, 0.0722, 0, 0, // R2
+          0.2126, 0.7152, 0.0722, 0, 0, // R3
+          0, 0, 0, 1, 0, // R4
         ]),
         child: _image,
       );
@@ -216,11 +200,6 @@ class SignInButton extends StatelessWidget {
         btnText ??= 'Sign in with Facebook';
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF1877F2);
-        break;
-      case ButtonType.discord:
-        btnText ??= "Sign in with Discord";
-        btnTextColor ??= Colors.white;
-        btnColor ??= Color(0xFF5865F2);
         break;
 
       case ButtonType.facebookDark:
@@ -335,6 +314,18 @@ class SignInButton extends StatelessWidget {
         btnText ??= 'Sign in with Instagram';
         btnTextColor ??= Colors.black87;
         btnColor ??= Colors.white;
+        break;
+
+      case ButtonType.discord:
+        btnText ??= "Sign in with Discord";
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xFF5865F2);
+        break;
+
+      case ButtonType.discordCircle:
+        btnText ??= "Sign in with Discord";
+        btnTextColor ??= Colors.white;
+        btnColor ??= Color(0xFF5865F2);
         break;
     }
   }
