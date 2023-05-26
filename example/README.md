@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Text(
                 '$_buttonClick',
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
               SizedBox(
                 height: 5.0,
@@ -192,6 +192,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     setState(() {
                       _buttonClick = "instagram";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.discord,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "discord";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.discordCircle,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "discord";
                     });
                   }),
               //custom button
