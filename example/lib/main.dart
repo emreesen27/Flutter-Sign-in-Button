@@ -191,6 +191,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "instagram";
                     });
                   }),
+              SignInButton(
+                  buttonType: ButtonType.discord,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "discord";
+                    });
+                  }),
+              SignInButton(
+                  buttonType: ButtonType.discordCircle,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "discord";
+                    });
+                  }),
               //custom button
               SignInButton(
                   buttonType: ButtonType.pinterest,

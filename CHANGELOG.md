@@ -1,3 +1,7 @@
+## [2.0.4] - 26.05.2023
+
+* Discord buttons added
+
 ## [2.0.3] - 12.02.2023
 
 * Android example version upgrade

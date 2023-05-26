@@ -1,6 +1,6 @@
 name: sign_button
 description: A Flutter plugin for generating sign in buttons for different social media accounts.
-version: 2.0.3
+version: 2.0.4
 homepage: https://github.com/emreesen27/Flutter-Sign-Button.git
 
 environment:
