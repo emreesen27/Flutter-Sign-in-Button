@@ -244,6 +244,12 @@ class SignInButton extends StatelessWidget {
         btnColor ??= Color(0xFF1DA1F2);
         break;
 
+      case ButtonType.twitterX:
+        btnText ??= 'Sign in with Twitter';
+        btnTextColor ??= Colors.white;
+        btnColor ??= Colors.black;
+        break;
+
       case ButtonType.linkedin:
         btnText ??= 'Sign in with LinkedIn';
         btnTextColor ??= Colors.white;

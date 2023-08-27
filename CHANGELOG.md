@@ -1,3 +1,7 @@
+## [2.0.5] - 27.08.2023
+
+* Twitter X button added
+
 ## [2.0.4] - 26.05.2023
 
 * Discord buttons added
