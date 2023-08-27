@@ -87,6 +87,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }),
               SignInButton(
+                  buttonType: ButtonType.twitterX,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "twitter X";
+                    });
+                  }),
+              SignInButton(
                   buttonType: ButtonType.github,
                   onPressed: () {
                     setState(() {

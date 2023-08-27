@@ -7,6 +7,7 @@ enum ButtonType {
   apple,
   appleDark,
   twitter,
+  twitterX,
   linkedin,
   google,
   googleDark,
