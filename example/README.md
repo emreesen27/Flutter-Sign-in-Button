@@ -90,6 +90,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }),
               SignInButton(
+                  buttonType: ButtonType.twitterX,
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "twitter X";
+                    });
+                  }),
+              SignInButton(
                   buttonType: ButtonType.github,
                   onPressed: () {
                     setState(() {
@@ -208,7 +215,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "discord";
                     });
                   }),
-              //custom button
+              // custom button
+              SignInButton(
+                  buttonType: ButtonType.custom,
+                  customImage: CustomImage("images/phone.png"),
+                  btnText: "Sign in with phone number",
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "phone number";
+                    });
+                  }),
               SignInButton(
                   buttonType: ButtonType.pinterest,
                   imagePosition: ImagePosition.right,

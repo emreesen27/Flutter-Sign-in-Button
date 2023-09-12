@@ -6,7 +6,7 @@ A Flutter plugin for generating sign in buttons for different social media accou
 You must add the library as a dependency to your project.
 ```yaml
 dependencies:
- sign_button: ^2.0.5
+ sign_button: ^2.0.6
 ```
 
 You should then run `flutter packages get`
@@ -103,3 +103,4 @@ SignInButton.mini(
 - shape
 - width  // You can change the value of width when the text size becomes too small.
 - padding  // Padding value is automatically adjusted according to the button size. You can give a value if you want
+- customImage // It can be used regardless of button type.

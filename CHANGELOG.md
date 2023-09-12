@@ -1,3 +1,7 @@
+## [2.0.6] - 12.09.2023
+
+* Image can now be changed
+
 ## [2.0.5] - 27.08.2023
 
 * Twitter X button added
