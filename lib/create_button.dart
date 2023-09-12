@@ -1,59 +1,64 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sign_button/custom_image.dart';
 import 'constants.dart';
 
 // ignore: must_be_immutable
 class SignInButton extends StatelessWidget {
-  //required
+  // required
   /// [buttonType] sets the style and icons of the button.
   ButtonType buttonType;
 
-  //required
+  // required
   /// [onPressed] Send a function to trigger the button.
   VoidCallback? onPressed;
 
-  //not required, default left
+  // not required, default left
   /// [imagePosition] set the position of the icon.(left or right)
   ImagePosition? imagePosition;
 
-  //not required, default 5.0
+  // not required, default 5.0
   /// [elevation] set the button's elevation value.
   double elevation;
 
-  //not required, default small
+  // not required, default small
   /// [buttonSize] set the size of the button. (small medium large)
   ButtonSize buttonSize;
 
-  //not required, Gets value according to buttonType.
+  // not required, Gets value according to buttonType.
   /// [btnColor] Set the background color of the button.
   Color? btnColor;
 
-  //not required, Gets value according to buttonType.
+  // not required, Gets value according to buttonType.
   /// [btnDisabledColor] Set the background color of the disabled button.
   Color? btnDisabledColor;
 
-  //not required, Gets value according to buttonType.
+  // not required, Gets value according to buttonType.
   /// [btnTextColor] set the button's text color.
   Color? btnTextColor;
 
-  //not required, Gets value according to buttonType.
+  // not required, Gets value according to buttonType.
   /// [btnDisabledTextColor] set the disabled button's text color.
   Color? btnDisabledTextColor;
 
-  //not required, Gets value according to buttonType.
+  // not required, Gets value according to buttonType.
   /// [btnText] set the button's text.
   String? btnText;
 
-  //not required, Gets value according to buttonSize.
+  // not required, Gets value according to buttonSize.
   /// You can change the value of [width] when the text size becomes too small.
   double? width;
 
-  //not required, Gets value according to buttonSize.
+  // not required, Gets value according to buttonSize.
   /// [padding] set the button's padding value.
   double? padding;
 
   /// [_image] value cannot be assigned.Gets value according to [buttonType].
   Widget? _image;
+
+  /// [customImage] use to assign an image, otherwise [_image] is used
+  // not required
+  CustomImage? customImage;
 
   /// [_fontSize] value cannot be assigned.Gets value according to [buttonSize].
   double? _fontSize;
@@ -61,11 +66,11 @@ class SignInButton extends StatelessWidget {
   /// [_imageSize] value cannot be assigned.Gets value according to [buttonSize].
   double? _imageSize;
 
-  //not required, button shape.
+  // not required, button shape.
   /// [shape] set the button's shape.
   ShapeBorder? shape;
 
-  //not required, button model.
+  // not required, button model.
   /// [mini] It automatically takes value according to the selected constructor.
   bool mini;
 
@@ -83,6 +88,7 @@ class SignInButton extends StatelessWidget {
     this.width,
     this.padding,
     this.shape,
+    this.customImage,
   }) : mini = false;
 
   SignInButton.mini({
@@ -93,6 +99,7 @@ class SignInButton extends StatelessWidget {
     this.btnDisabledColor,
     this.elevation = 5.0,
     this.padding,
+    this.customImage,
   }) : mini = true;
 
   bool get _enabled => onPressed != null;
@@ -177,8 +184,10 @@ class SignInButton extends StatelessWidget {
     btnDisabledTextColor ??= Theme.of(context).disabledColor.withOpacity(0.38);
 
     _image = Image.asset(
-      'images/${describeEnum(buttonType)}.png',
-      package: 'sign_button',
+      customImage?.imagePath ?? 'images/${describeEnum(buttonType)}.png',
+      package: customImage?.imagePath != null
+          ? (customImage?.package ?? null)
+          : 'sign_button',
       width: _imageSize,
       height: _imageSize,
     );
@@ -332,6 +341,12 @@ class SignInButton extends StatelessWidget {
         btnText ??= "Sign in with Discord";
         btnTextColor ??= Colors.white;
         btnColor ??= Color(0xFF5865F2);
+        break;
+
+      case ButtonType.custom:
+        btnText ??= "Custom Button";
+        btnTextColor ??= Colors.black87;
+        btnColor ??= Colors.white;
         break;
     }
   }

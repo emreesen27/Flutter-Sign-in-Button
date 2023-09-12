@@ -212,7 +212,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       _buttonClick = "discord";
                     });
                   }),
-              //custom button
+              // custom button
+              SignInButton(
+                  buttonType: ButtonType.custom,
+                  width: 230,
+                  customImage: CustomImage("images/phone.png"),
+                  btnText: "Sign in with phone number",
+                  onPressed: () {
+                    setState(() {
+                      _buttonClick = "phone number";
+                    });
+                  }),
               SignInButton(
                   buttonType: ButtonType.pinterest,
                   imagePosition: ImagePosition.right,
